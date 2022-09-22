@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Circle(radius, color) {
+        this.radius = radius;
+        this.color = color.toString();
+        this.Circle = function () {
+            this.getDiameter = function () {        //muốn trích xuất phương thức getDiameter thì phải trích xuất phương thức Circle trước
+                return "D = " + 2 * this.radius
+            }
+        }
+
+        this.getRadius = function () {
+            return "R = " + this.radius;
+        }
+        this.getArea = function () {
+            return "S = " + 2 * Math.PI * Math.pow(this.radius, 2);
+        }
+    }
+
+    let circle1 = new Circle(3.5, "yellow");
+    console.log(circle1.radius)
+    console.log(circle1.color)
+    console.log(circle1.getRadius());
+    console.log(circle1.getArea());
+    circle1.Circle();
+    console.log(circle1.getDiameter());
+
+</script>
+</body>
+</html>

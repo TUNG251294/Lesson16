@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id = "myCanvas" width="500" height="300"></canvas>
+<script>
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d")    //sử dụng hàm getContext("2d") để tạo đối tượng vẽ thông qua Canvas và gán cho biến ctx
+    ctx.beginPath();                //cú pháp trích xuất phương thức
+    ctx.arc(95,50,40,0,2*Math.PI);
+    ctx.stroke();
+</script>
+</body>
+</html>
