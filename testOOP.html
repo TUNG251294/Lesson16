@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Student(id, name, address) {   //hàm tạo class student
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.getInfor = function () {       //hàm lấy thông tin
+            return "Id = " + this.id + " Name = " + this.name + " Address = " + this.address;
+        }
+    }
+    let student = new Student(1, "Huỳnh Thanh Tùng", "Đồng Nai");
+    console.log(student.getInfor())
+
+    let Car = {id:2, name:"BMW"}
+    console.log(Car.id)
+</script>
+</body>
+</html>

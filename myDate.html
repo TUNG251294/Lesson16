@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>//Ctrl + R đổi nhiều chữ cùng lúc
+
+    function MyDate(day,month,year) {
+        this.day = day;
+        this.month =month;
+        this.year =year;
+        this.getMyDate = function () {
+            return this.day+"/"+this.month+"/"+this.year;
+        }
+        this.getDay =function () {return this.day;
+        }
+        this.getMonth = function () {return this.month;
+        }
+        this.getYear = function(){return this.year;}
+        this.setDay = function (day) { this.day = day;}
+        this.setMonth = function (month) { this.month =month;}
+        this.setYear = function (year) {this.year =year;}
+        this.setDate = function (day,month,year) {this.day =day;this.month =month;this.year =year;}
+        this.toString = function () {
+            if (this.day <10){this.day = "0"+this.day}
+            if (this.month<10){this.month ="0"+this.month}
+            return this.day +"/"+this.month+"/"+this.year;
+        }
+    }
+
+    let tDate = new MyDate(2,2,2007);
+    console.log(tDate.day);
+    console.log(tDate.month);
+    console.log(tDate.year);
+    console.log(tDate.getMyDate());
+    console.log(tDate.getDay());
+    console.log(tDate.getMonth());
+    console.log(tDate.getYear());
+    tDate.setDay(31);
+    console.log(tDate.getDay());
+    tDate.setMonth(1);
+    console.log(tDate.getMonth());
+    tDate.setYear(2006);
+    console.log(tDate.getYear());
+    tDate.setDate(2,9,1996)
+    console.log(tDate.getMyDate());
+    console.log(tDate.toString());
+</script>
+</body>
+</html>
