@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>/*
+  let person = {
+    name: ['Bob', 'Smith'],
+    age: 32,
+    gender: 'male',
+    interests: ['music', 'skiing'],
+    bio: function() {
+      alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+    },
+    greeting: function() {
+      alert('Hi! I\'m ' + this.name[0] + '.');
+    }
+  };
+  person.bio()
+  person.greeting()
+  console.log(person.age)  */
+
+  function Person (infoArray){            //gán tất cả thuộc tính của class vào trong 1 mảng và cách truy xuất từng thuộc tính
+
+    this.getFirstName = function (){
+      return infoArray[0];
+    }
+    this.getLastName = function (){
+      return infoArray[1];
+    }
+    this.getAge = function () {
+      return infoArray[2]
+    }
+  }
+
+  let infoArr01 = ["Nguyen Van","Nam",20];
+  let person01 = new Person (infoArr01);
+  console.log(person01.getFirstName());
+  console.log(person01.getLastName());
+  console.log(person01.getAge());
+
+
+</script>
+</body>
+</html>

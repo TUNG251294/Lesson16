@@ -3,15 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="testCanvas.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<canvas id = "myCanvas" width="500" height="300"></canvas>
+<canvas id = "myCanvas" width="800" height="600" style="border: 1px solid black"></canvas>
 <script>
-    let c = document.getElementById("myCanvas");
-    let ctx = c.getContext("2d")    //sử dụng hàm getContext("2d") để tạo đối tượng vẽ thông qua Canvas và gán cho biến ctx
-    ctx.beginPath();                //cú pháp trích xuất phương thức
-    ctx.arc(95,50,40,0,2*Math.PI);
+    let ctx = document.getElementById("myCanvas").getContext("2d")//sử dụng hàm getContext để tạo đối tượng vẽ thông qua Canvas và gán cho biến ctx
+
+    ctx.beginPath();
+    ctx.arc(95,50,40,0,1.5*Math.PI);
+    ctx.fillStyle = "green"
+    ctx.strokeStyle = "red"
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(0,0);
+    ctx.lineTo(200,100);
     ctx.stroke();
+
+    ctx.fillStyle = "black"
+    ctx.font = "30px Arial";
+    ctx.fillText("Hello World",40,80)
+
+    ctx.strokeStyle = "purple"
+    ctx.font = "Cambria"
+    ctx.strokeText("Tung",150,40)
+
+    ctx.beginPath();
+    ctx.moveTo(20, 20); // Di chuyển tới điểm xuất bắt đầu
+    ctx.lineTo(100, 20); // Tạo một đường kẻ ngang
+    ctx.arcTo(350, 20, 350, 120, 100); // Tạo một vòng cung
+    ctx.strokeText("1",350,20);
+    ctx.strokeText("1",350,120);
+    ctx.lineTo(350, 220); // Sau đó vẽ tiếp một đường kẻ dọc
+    ctx.stroke(); // Thể hiện hình trên canvas
+
+    //Create gradient
+    let grd = ctx.createLinearGradient(0,0,200,0);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(0.5,"yellow");
+    grd.addColorStop(1,"white");
+    ctx.fillStyle = grd;
+    ctx.fillRect(10,10,190,80);
+
+    let grd2 = ctx.createRadialGradient(200,200,100,300,300,0);
+    grd2.addColorStop(0, "blue");grd2.addColorStop(1,"green");
+    ctx.fillStyle =grd2;
+    ctx.fillRect(200,200,100,100)
+
+
 </script>
 </body>
 </html>
