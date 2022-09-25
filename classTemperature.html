@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Temperature(celsius) {
+        this.celsius = celsius;
+        this.fahrenheit = function () {
+            if (this.celsius >= -273.15)
+                return this.celsius * 9 / 5 + 32;
+        }
+        this.kelvin = function () {
+            if (this.celsius >= -273.15)
+                return this.celsius + 273.15;
+        }
+    }
+
+    let temperature = new Temperature(25);
+    console.log(temperature.fahrenheit());
+    console.log(temperature.kelvin());
+</script>
+</body>
+</html>
